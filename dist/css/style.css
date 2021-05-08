@@ -1,0 +1,58 @@
+.list-icon nav ul {
+	display: flex;
+}
+
+.list-icon nav ul li {
+	margin-right: 40px;
+}
+
+.list-icon nav ul li:last-child {
+	margin-right: 0;
+}
+
+.list-icon nav ul li:last-child .demo span {
+	background: #06bec7;
+}
+
+.list-icon nav ul li:first-child {
+	margin-right: 40px;
+}
+
+.list-icon nav ul li .demo {
+	position: relative;
+	cursor: pointer;
+	transform: translateY(-8px);
+}
+
+.list-icon nav ul li .demo:hover span {
+	-webkit-animation: up 2.5s linear;
+	animation: up 2.5s linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.list-icon nav ul li .demo:hover i {
+	transition: all .4;
+	color: #06bec7;
+}
+
+.list-icon nav ul li .demo i {
+	font-size: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.list-icon nav ul li .demo span {
+	font-size: 11px;
+	position: absolute;
+	bottom: 0;
+	left: -5px;
+	width: 22px;
+	height: 22px;
+	transition: all .4s ease-in;
+	color: white;
+	border-radius: 50%;
+	background-color: #999;
+}
+

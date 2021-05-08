@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Effect</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+        const circle = new mojs.Shape({
+            left: 0,
+            top: 0,
+            strokeWidth: 8,
+            fill: 'none',
+            radius: 80,
+            scale: {
+                0: 1
+            },
+            opacity: {
+                10: 0
+            },
+            // shape:'circle',
+            // shape:'line',
+            // shape:'rect',
+            shape: 'polygon',
+            // shape:'curve',
+            // shape:'zigzag',
+            // shape:'cross',
+            // shape:'equal',
+            stroke: 'pink',
+            strokeWidth: 8,
+            fill: 'none',
+            duration: 500,
+        });
+
+        const burst = new mojs.Burst({
+            count: 10,
+            left: 0,
+            top: 0,
+            children: {
+                shape: ['circle', 'rect', 'curve', 'polygon'],
+                fill: ['yellow', 'red', 'green', 'blue'],
+                degreeShift: 'rand(-360, 360)',
+                delay: 'stagger(0, 30)'
+            },
+            duration: 400
+        });
+
+        const bang = new mojs.Burst({
+            left: 0,
+            top: 0,
+            radius: {
+                2: 40
+            },
+            angle: 45,
+            count: 8,
+            children: {
+                radius: 8,
+                fill: 'orange',
+                scale: {
+                    1: 0,
+                    easing: 'sin.in'
+                },
+                pathScale: [0.7, null],
+                duration: [500, 700],
+                degreeShift: [13, null],
+            }
+        });
+
+        document.onclick = (e) => {
+            const position = {
+                x: e.pageX,
+                y: e.pageY
+            }
+
+            circle.tune(position);
+            circle.replay();
+            burst.tune(position);
+            burst.replay();
+            bang.tune(position);
+            bang.replay();
+        }
+    </script>
+</body>
+
+</html>

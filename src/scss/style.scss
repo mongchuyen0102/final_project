@@ -1,0 +1,66 @@
+.list-icon {
+  nav {
+    ul {
+      display: flex;
+
+      li {
+        margin-right: 40px;
+
+        &:last-child {
+          margin-right: 0;
+
+          .demo {
+            span {
+              background: #06bec7;
+            }
+
+          }
+        }
+
+        &:first-child {
+          margin-right: 40px;
+        }
+
+        .demo {
+          position: relative;
+          transform: translateY(-8px);
+          cursor: pointer;
+
+          &:hover {
+            span {
+              animation: up 2.5s linear;
+              animation-iteration-count: infinite;
+
+            }
+
+            i {
+              color: #06bec7;
+              transition: all 0.4;
+            }
+          }
+
+          i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 15px;
+          }
+
+          span {
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+            transition: all 0.4s ease-in;
+            width: 22px;
+            height: 22px;
+            color: white;
+            font-size: 11px;
+            border-radius: 50%;
+            background-color: #999;
+          }
+        }
+
+      }
+    }
+  }
+}
